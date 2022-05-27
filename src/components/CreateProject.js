@@ -61,7 +61,7 @@ const CreateProject = () => {
 
                 <div className="mb-4">
                     <label htmlFor="name_project" className="block text-white text-sm font-bold mb-2">Project Name</label>
-                    <input onChange={handleChange} type="text" name="name_project" className="" placeholder="Project Name" className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"></input>                    
+                    <input onChange={handleChange} type="text" name="name_project" placeholder="Project Name" className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"></input>                    
                 </div>
 
                 <div className="mb-4">
