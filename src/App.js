@@ -1,48 +1,47 @@
-import { Routes, Route } from 'react-router-dom'
-import Login from './components/Login'
-import Register from './components/Register'
-import Profile from './components/Profile'
-import { AuthProvider } from './context/authContext'
-import ProtectedRoute from './components/ProtectedRoute'
-import CreateProject from './components/CreateProject'
-import store from './store'
-import ViewProjects from './components/ViewProjects'
+import { Routes, Route } from "react-router-dom";
+import Login from "./components/Login";
+import Register from "./components/Register";
+import Profile from "./components/Profile";
+import { AuthProvider } from "./context/authContext";
+import ProtectedRoute from "./components/ProtectedRoute";
+import CreateProject from "./components/CreateProject";
+import ViewProjects from "./components/ViewProjects";
 
-import { Provider } from 'react-redux'
-
-const App = () => {  
-
+const App = () => {
   return (
-
-    <div className='bg-gray-900 h-screen text-black flex'>
-
-      <Provider store={store}>
-        <AuthProvider>
-          <Routes>
-            <Route path='/' element={<Login/>} />
-            <Route path='/viewprojects' element={
+    <div className="bg-gray-900 h-screen text-black flex">
+      <AuthProvider>
+        <Routes>
+          <Route path="/" element={<Login />} />
+          <Route
+            path="/viewprojects"
+            element={
               <ProtectedRoute>
-                <ViewProjects/>
+                <ViewProjects />
               </ProtectedRoute>
-            } />
-            <Route path='/register' element={<Register/>} />
-            <Route path='/project' element={
+            }
+          />
+          <Route path="/register" element={<Register />} />
+          <Route
+            path="/project"
+            element={
               <ProtectedRoute>
-                <CreateProject/>  
+                <CreateProject />
               </ProtectedRoute>
-            } />
-            <Route path='/profile' element={
+            }
+          />
+          <Route
+            path="/profile"
+            element={
               <ProtectedRoute>
-                <Profile/>  
+                <Profile />
               </ProtectedRoute>
-            } />
-          </Routes>        
-        </AuthProvider>
-      </Provider>
-
-
+            }
+          />
+        </Routes>
+      </AuthProvider>
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;
