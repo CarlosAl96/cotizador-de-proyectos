@@ -64,7 +64,7 @@ const Register = () => {
                 
             </form>
 
-            <p className="my-4 text-sm text-white flex justify-between px-3">You have an Account? <Link to="/login">Login</Link></p>
+            <p className="my-4 text-sm text-white flex justify-between px-3">You have an Account? <Link to="/">Login</Link></p>
 
         </div>
     )

@@ -16,7 +16,7 @@ const ViewProjects = () => {
                 </div>                
                 { projects &&
                     projects.dat.map(project => 
-                        <div className="border border-black p-5 mb-2">
+                        <div className="border border-gray-900 p-5 mb-2">
                             <span  className="block text-white text-sm font-bold mb-2">{project.name_project}</span>
                             {
                                 project.devs.map(dev => 

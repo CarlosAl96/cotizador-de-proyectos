@@ -14,7 +14,7 @@ const App = () => {
 
   return (
 
-    <div className='bg-violet-900 h-screen text-black flex'>
+    <div className='bg-gray-900 h-screen text-black flex'>
 
       <Provider store={store}>
         <AuthProvider>

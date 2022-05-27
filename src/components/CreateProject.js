@@ -6,7 +6,7 @@ import { useAuth } from "../context/authContext"
 const CreateProject = () => {
 
 
-    const { projects, addProjects } = useAuth()
+    const { addProjects } = useAuth()
     const navigate = useNavigate()
     const [project, setProject] = useState({
         name_project: '',
@@ -103,7 +103,7 @@ const CreateProject = () => {
                         }
                     </div>
 
-                    <div className="mb-4">
+                    <div>
 
                         <span className="block text-white text-sm font-bold mb-2">Budget</span>
 
