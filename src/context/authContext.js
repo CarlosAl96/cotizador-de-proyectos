@@ -18,6 +18,10 @@ export function AuthProvider ({ children }) {
 
     const [user, setUser] = useState(null)
 
+    const [projects, setProjects] = useState({
+        dat: []
+    })
+
     const [loading, setLoading] = useState(true)
     const signup = (email, password) => 
         createUserWithEmailAndPassword(auth, email, password)
@@ -35,7 +39,11 @@ export function AuthProvider ({ children }) {
     const resetPass = (email) => {
         sendPasswordResetEmail(auth, email)
     }
-
+    const addProjects = (project) => {
+        let dat = projects.dat
+        dat.push(project)
+        setProjects({...projects, ['dat']: dat})
+    }
     useEffect(() => {
         onAuthStateChanged(auth, currentUser => {
             setUser(currentUser)
@@ -43,10 +51,8 @@ export function AuthProvider ({ children }) {
         })
     }, [])
 
-
-    
     return (
-        <authContext.Provider value={{signup, login, logout, loading, user, loginWithGoogle, resetPass}}>
+        <authContext.Provider value={{signup, login, logout, loading, user, loginWithGoogle, resetPass, projects, addProjects}}>
             { children }
         </authContext.Provider>
     )

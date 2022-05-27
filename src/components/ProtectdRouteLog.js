@@ -1,14 +1,14 @@
 import { Navigate } from "react-router-dom"
 import { useAuth } from "../context/authContext"
 
-const ProtectedRoute = ({ children }) => {
+const ProtectedRouteLog = ({ children }) => {
     const { user, loading } = useAuth()
 
     if(loading) return <h1>Loading</h1>
-    if(!user) return <Navigate to='/' />
+    if(user =! null) return <Navigate to='/profile' />
 
 
     return <>{children}</>
 }
 
-export default ProtectedRoute
+export default ProtectedRouteLog

@@ -9,10 +9,13 @@ const Login = () => {
         email: '',
         password: ''
     })
-
+    const [error, setError] = useState()
     const { user, login, loginWithGoogle, resetPass } = useAuth()
     const navigate = useNavigate()
-    const [error, setError] = useState()
+    if(user) return <Navigate to='/profile' />
+
+    
+    
 
     const handleChange = ({ target }) => {
         setUser({..._user, [target.name] : target.value})
@@ -53,7 +56,7 @@ const Login = () => {
         }
     }
 
-    if(user) return <Navigate to='/profile' />
+    
 
     return (
         <div className="w-full max-w-xs m-auto">
